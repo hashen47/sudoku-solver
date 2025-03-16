@@ -1,7 +1,6 @@
 package sudoku_solver
 
 import (
-	"fmt"
 	"github.com/hashen47/sudoku-solver/dimension_lookup"
 	"github.com/hashen47/sudoku-solver/board_lookup"
 )
