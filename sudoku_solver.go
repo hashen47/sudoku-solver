@@ -13,28 +13,6 @@ const (
 	MAX_VAL = 9 
 )
 
-func main() {
-	board := Board{
-		[]int{5, 3, 0, 0, 7, 0, 0, 0, 0},
-		[]int{6, 0, 0, 1, 9, 5, 0, 0, 0},
-		[]int{0, 9, 8, 0, 0, 0, 0, 6, 0},
-		[]int{8, 0, 0, 0, 6, 0, 0, 0, 3},
-		[]int{4, 0, 0, 8, 0, 3, 0, 0, 1},
-		[]int{7, 0, 0, 0, 2, 0, 0, 0, 6},
-		[]int{0, 6, 0, 0, 0, 0, 2, 8, 0},
-		[]int{0, 0, 0, 4, 1, 9, 0, 0, 5},
-		[]int{0, 0, 0, 0, 8, 0, 0, 7, 9},
-	}
-
-	solutions := GetSudokuSolutions(board)
-
-	for _, solution := range solutions {
-		fmt.Println()
-		fmt.Println(solution)
-		fmt.Println()
-	}
-}
-
 func GetSudokuSolutions(board Board) []Board {
 	solutions := make([]Board, 0)
 	boardLookUpTable := board_lookup.NewBoardLookUp()
