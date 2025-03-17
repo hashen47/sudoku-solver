@@ -1,12 +1,13 @@
 package dimension_lookup
 
 type DimLookUpType int
+
 const (
 	DimRow DimLookUpType = iota
 	DimCol
 )
 
-type DimLookUp map[DimLookUpType]map[int]map[int]bool 
+type DimLookUp map[DimLookUpType]map[int]map[int]bool
 
 func NewDimLookUp() DimLookUp {
 	dl := make(DimLookUp, 0)

@@ -5,8 +5,9 @@ import (
 )
 
 type BoardLookUpType int
+
 const (
-	BoardOne BoardLookUpType = iota 
+	BoardOne BoardLookUpType = iota
 	BoardTwo
 	BoardThre
 	BoardFour
@@ -17,20 +18,20 @@ const (
 	BoardNine
 )
 
-type BoardLookUp map[BoardLookUpType]map[int]bool 
+type BoardLookUp map[BoardLookUpType]map[int]bool
 
-var LookUpOutBoundError error = errors.New("row or column value cannot less than 0 or cannot exceed 8")
+var LookUpOutBoundError error = errors.New("row and column index cannot less than 0 or cannot exceed 8")
 var LookUpKeyNotFoundError error = errors.New("given key is not found in the lookup")
 
 func NewBoardLookUp() BoardLookUp {
 	l := make(BoardLookUp, 0)
 	for i := 0; i < 9; i++ {
-		l[BoardLookUpType(i)]   = make(map[int]bool, 0)
+		l[BoardLookUpType(i)] = make(map[int]bool, 0)
 	}
 	return l
 }
 
-func (l *BoardLookUp) Insert(row, col , key int, val bool) error {
+func (l *BoardLookUp) Insert(row, col, key int, val bool) error {
 	if !isRowColRangeValid(row, col) {
 		return LookUpOutBoundError
 	}
@@ -69,5 +70,5 @@ func isRowColRangeValid(row, col int) bool {
 }
 
 func getBoardLookUpType(row, col int) BoardLookUpType {
-	return BoardLookUpType((row/3)*3 + (col/3))
+	return BoardLookUpType((row/3)*3 + (col / 3))
 }

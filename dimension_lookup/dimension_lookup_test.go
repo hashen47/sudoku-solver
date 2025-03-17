@@ -28,7 +28,7 @@ func TestInsert(t *testing.T) {
 }
 
 func TestIsKeyExists(t *testing.T) {
-	rows, cols := 9, 9 
+	rows, cols := 9, 9
 	dl := NewDimLookUp()
 
 	for i := 0; i < rows; i++ {

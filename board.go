@@ -49,7 +49,7 @@ func (b Board) String() string {
 	output := ""
 	for rowI, row := range b {
 		for _, col := range row {
-			output += fmt.Sprintf("%d ", col) 
+			output += fmt.Sprintf("%d ", col)
 		}
 		if rowI != len(b)-1 {
 			output += "\n"
