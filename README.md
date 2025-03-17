@@ -39,7 +39,11 @@
             []int{0,4,2,9,1,0,3,0,0,},
         }
 
-        solutions := sudoku_solver.GetSudokuSolutions(dataset) // []sudoku_solver.Board
+        solutions, err := sudoku_solver.GetSudokuSolutions(dataset) // []sudoku_solver.Board
+
+        if err != nil { // you can handle the error by your self
+            panic(err)
+        }
 
         for _, solution := range solutions {
             fmt.Println(solution)
